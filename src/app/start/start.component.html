@@ -1,0 +1,29 @@
+<!-- <p>
+  start works!
+</p> -->
+<mat-accordion>
+
+  <li *ngFor="let hero of heroesList">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{hero.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{hero.power}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <h2>{{hero.name}}</h2>
+      {{hero.alias}}:
+      <p>{{hero.description}}</p>
+      <p>Price: {{hero.price}}<mat-icon>money</mat-icon><p>
+
+      <mat-action-row>
+        <button mat-fab color="primary" (click)="hireHero(hero)">Hire</button>
+
+      </mat-action-row>
+    </mat-expansion-panel>
+  </li>
+
+</mat-accordion>

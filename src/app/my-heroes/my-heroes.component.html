@@ -1,0 +1,38 @@
+<div>
+  <h2>
+    Your Hired Heroes
+  </h2>
+  <p *ngIf="heroes != undefined" id="totalPrice">
+    Total price: {{total}}
+    <mat-icon>money</mat-icon>
+  </p>
+
+  <p *ngIf="heroes == undefined">
+    No heroes Hired!
+  </p>
+
+  <mat-list>
+    <mat-list-item *ngFor="let hero of heroes; last as last" id="heroItem">
+      <mat-icon matListIcon>grade</mat-icon>
+      <h3 matLine> {{hero.name}} </h3>
+      <p matLine>
+        <span> {{hero.alias}} </span>
+      </p>
+      <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+</div>
+
+<div style="margin-top:100px;">
+  <label>Discount!</label><input type="checkbox" id="scales" name="scales" (change)="discountChecked(10)">&nbsp;&nbsp;
+  <label>Discount!</label><input type="checkbox" id="scales" name="scales" (change)="discountChecked(20)">&nbsp;&nbsp;
+  <label>Discount!</label><input type="checkbox" id="scales" name="scales" (change)="discountChecked(30)">&nbsp;&nbsp;
+</div>
+
+
+<!-- <div>
+<mat-checkbox id="discount" [(ngModel)]="discount10" (change)="discountChecked(discount10?-10:10)">Discount!</mat-checkbox>&nbsp;&nbsp;
+<mat-checkbox id="discount" [(ngModel)]="discount20" (change)="discountChecked(discount20?-20:20)">Discount!</mat-checkbox>&nbsp;&nbsp;
+<mat-checkbox id="discount" [(ngModel)]="discount30" (change)="discountChecked(discount30?-30:30)">Discount!</mat-checkbox>&nbsp;&nbsp;
+</div> -->

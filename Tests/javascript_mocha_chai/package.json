@@ -1,0 +1,14 @@
+{
+  "name": "Javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha mocha-test.js --no-timeouts"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}

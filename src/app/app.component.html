@@ -1,0 +1,43 @@
+<div *ngIf="currentUser">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" id="menuBtn">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="navigate('/start')" id="heroListBtn">
+          <mat-icon>list</mat-icon>
+          <span>Hero List</span>
+        </button>
+        <button mat-menu-item (click)="navigate('/my-heroes')" id="myHeroesBtn">
+          <mat-icon>accessibility_new</mat-icon>
+          <span>My Heroes</span>
+        </button>
+        <button mat-menu-item (click)="logout()" id="logoutBtn">
+          <mat-icon>directions_run</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+      <span class="example-spacer"></span>
+      <span name="pageName">{{page}}</span>
+
+      <span class="example-spacer"></span>
+      <button mat-flat-button color="warn" (click)="deleteAccount()">Delete Account</button>
+
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+
+</div>
+
+
+<div class="jumbotron">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>\
